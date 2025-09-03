@@ -1,7 +1,4 @@
-import { supabase } from "@/lib/supabase";
 import { requireEnv } from "@/lib/env";
-import { ListingImage } from "@/models/productImage";
-import { Product } from "@/models/product";
 
 type UnsplashResponse = {
   urls: {
@@ -16,7 +13,7 @@ export async function fetchImages(query: string, count: number): Promise<string[
   const res = await fetch(
     `https://api.unsplash.com/photos/random?query=${encodeURIComponent(
       query
-    )}&client_id=${unsplashKey}&count=3`
+    )}&client_id=${unsplashKey}&count=${count}`
   );
 
   if (!res.ok) {

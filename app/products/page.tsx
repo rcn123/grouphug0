@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { Product } from "@/models/product";
 import { supabase } from "@/lib/supabase";
 
 // const products : Product[]=
@@ -10,7 +9,6 @@ import { supabase } from "@/lib/supabase";
 //     {id: 2, title: 'Product number 2', price : 22, description : 'desc', category : 'socks'},
 // ]
 
-type ProductWithImageUrls = Product & { images: string[] };
 
 export default async function Main() {
   const { data, error } = await supabase
@@ -19,7 +17,7 @@ export default async function Main() {
     .limit(1, { foreignTable: 'listing_images' });;
 
   if (error) {
-    return <div>Error during product loading: '{error.message}'</div>;
+    return <div>Error during product loading: &apos;{error.message}&apos;</div>;
   }
 
   if (!data) {

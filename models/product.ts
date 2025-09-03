@@ -1,5 +1,3 @@
-import {ProductImage} from '@/models/productImage'
-
 export type Product = 
 {
   id: number;

@@ -17,7 +17,7 @@ export default async function Main(props: ProductPageProps) {
   }
 
   if (!product) {
-    return <h1>No product with id '{params.productId}' was found </h1>;
+    return <h1>No product with id &apos;{params.productId}&apos; was found </h1>;
   }
 
   const productImages = product.listing_images.map((i) => i.url);

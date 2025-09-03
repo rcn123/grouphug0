@@ -16,7 +16,7 @@ type ProductCarouselProps = {
 };
 
 export default function ProductCarousel({ images, title }: ProductCarouselProps) {
-  const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState<unknown>(null);
 
   if (!images || images.length === 0) {
     return (
