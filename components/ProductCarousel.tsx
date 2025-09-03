@@ -2,6 +2,7 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Thumbs } from 'swiper/modules';
+import type { Swiper as SwiperType } from 'swiper';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -16,7 +17,7 @@ type ProductCarouselProps = {
 };
 
 export default function ProductCarousel({ images, title }: ProductCarouselProps) {
-  const [thumbsSwiper, setThumbsSwiper] = useState<unknown>(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
   if (!images || images.length === 0) {
     return (
