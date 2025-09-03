@@ -24,6 +24,9 @@ jobs:
         run: npm run lint
       # - name: Run tests
       #   run: npm test -- --watchAll=false
-
+      
       - name: Build
         run: npm run build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{secrets.NEXT_PUBLIC_SUPABASE_URL}}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{NEXT_PUBLIC_SUPABASE_ANON_KEY}}
